@@ -11,4 +11,9 @@ class GeneratorTest < Minitest::Test
     assert_instance_of Generator, @generator
   end
 
+  def test_it_generates_random_number
+    assert (@generator.generate.to_i >= 0 && @generator.generate.to_i <= 99999)
+    assert (@generator.generate.length == 5)
+  end
+
 end
