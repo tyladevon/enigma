@@ -5,4 +5,8 @@ class Generator
     random_number.rjust(5, "0")
   end
 
+  def self.generate_date
+    date = Date.today.strftime('%d%m%y')
+  end
+
 end
