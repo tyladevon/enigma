@@ -1,3 +1,4 @@
+require 'date'
 require './lib/generator'
 require './lib/encrypt'
 require './lib/decrypt'
