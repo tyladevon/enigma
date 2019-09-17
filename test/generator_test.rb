@@ -1,19 +1,16 @@
 require './test_helper'
+require 'date'
 require './lib/generator'
 
 class GeneratorTest < Minitest::Test
 
-  def setup
-    @generator = Generator.new
-  end
-
-  def test_it_exists
-    assert_instance_of Generator, @generator
-  end
-
   def test_it_generates_random_number
-    assert (@generator.generate_random_number.to_i >= 0 && @generator.generate_random_number.to_i <= 99999)
-    assert (@generator.generate_random_number.length == 5)
+    assert (Generator.generate_random_number.to_i >= 0 && Generator.generate_random_number.to_i <= 99999)
+    assert (Generator.generate_random_number.length == 5)
+  end
+
+  def test_it_generates_date_today
+    assert Generator.generate_date
   end
 
 end
