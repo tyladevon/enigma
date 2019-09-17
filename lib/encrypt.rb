@@ -22,10 +22,11 @@ class Encrypt
 
     library = ("a".."z").to_a << " "
 
-      encrypted_message = message.chars.map.with_index do |letter, index|
+      encrypted_message = message.downcase.chars.map.with_index do |letter, index|
+        # require 'pry';binding.pry
         shift = library.find_index(letter) + shift_hash.values[index % shift_hash.length]
         library[shift % library.length]
-        # require 'pry';binding.pry
+        # returns array of string character--ie letters
       end.join
       {encryption: encrypted_message,
        key:        key,
