@@ -5,22 +5,18 @@ require './lib/decrypt'
 
 class Enigma
 
-  def encrypt(message, key = Generator.generate_random_number, date = Date.today.strftime('%d%m%y'))
-    if key.length == 5
-      key = key
-    else
+  def encrypt(message, key = "", date = Date.today.strftime('%d%m%y'))
+    if key.length != 5
       date = key
-      key = generate_random_number
+      key = Generator.generate_random_number
     end
     Encrypt.encrypt(message, key, date)
   end
 
   def decrypt(message, key, date)
-    if key.length == 5
-      key = key
-    else
+    if key.length != 5
       date = key
-      key = generate_random_number
+      key = Generator.generate_random_number
     end
     Decrypt.decrypt(message, key, date)
   end
