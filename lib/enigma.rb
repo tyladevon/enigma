@@ -10,17 +10,17 @@ class Enigma
       key = key
     else
       date = key
-      key = generate_random_number
+      key = Generator.generate_random_number
     end
     Encrypt.encrypt(message, key, date)
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key = Generator.generate_random_number, date = Date.today.strftime('%d%m%y'))
     if key.length == 5
       key = key
     else
       date = key
-      key = generate_random_number
+      key = Generator.generate_random_number
     end
     Decrypt.decrypt(message, key, date)
   end

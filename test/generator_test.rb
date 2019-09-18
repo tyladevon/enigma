@@ -1,6 +1,6 @@
 require './test_helper'
-require 'date'
 require './lib/generator'
+require 'date'
 
 class GeneratorTest < Minitest::Test
 

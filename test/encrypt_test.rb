@@ -10,7 +10,6 @@ class EncryptTest < Minitest::Test
       })
 
     assert_equal expected, Encrypt.encrypt("hello world", "02715", "040895")
-
   end
-
+  
 end

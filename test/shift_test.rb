@@ -1,22 +1,15 @@
 require './test_helper'
+require 'mocha/minitest'
 require './lib/shift'
 require './lib/generator'
 
 class ShiftTest < Minitest::Test
 
-  def setup
-    @shift = Shift.new
-  end
-
-  def test_it_exists
-    assert_instance_of Shift, @shift
-  end
-
   def test_shift_message
-    assert @shift.shift_message
-  end
-  # assert (@generator.generate.to_i >= 0 && @generator.generate.to_i <= 99999)
-  # assert (@generator.generate.length == 5)
+    key = "01234"
+    date = "160919"
 
+    assert_equal ({"A"=>5, "B"=>17, "C"=>29, "D"=>35}), Shift.shift_message(key, date)
+  end
 
 end
