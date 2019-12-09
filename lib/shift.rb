@@ -1,7 +1,6 @@
 require './lib/generator'
 
 class Shift
-
   def self.shift_message(key, date)
     key_hash = Hash.new(0)
     key_hash["A"] = key.slice(0,2).to_i
