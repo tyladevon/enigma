@@ -1,6 +1,5 @@
 require './lib/enigma'
 
-
 input_file_name = ARGV.first
 input_file = File.open(input_file_name, "r")
 

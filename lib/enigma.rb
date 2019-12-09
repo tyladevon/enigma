@@ -4,7 +4,6 @@ require './lib/encrypt'
 require './lib/decrypt'
 
 class Enigma
-
   def encrypt(message, key = Generator.generate_random_number, date = Date.today.strftime('%d%m%y'))
     if key.length == 5
       key = key
@@ -24,5 +23,4 @@ class Enigma
     end
     Decrypt.decrypt(message, key, date)
   end
-
 end
